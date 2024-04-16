@@ -1,4 +1,3 @@
-
 theme_barplot <- function(bar_direction = c("vert", "horiz")) {
     bar_direction <- match.arg(bar_direction)
 
@@ -7,18 +6,20 @@ theme_barplot <- function(bar_direction = c("vert", "horiz")) {
             theme(
                 axis.text.x = element_text(angle = 45, hjust = 1),
                 panel.grid = element_blank(),
-                panel.grid.major.y = element_line(colour = "grey90"),
+                panel.grid.major.y = element_line(colour = "grey90", linetype = "dotted"),
                 strip.text = element_text(size = 10, face = "bold"),
-                strip.background = element_rect(fill = "grey90")
+                strip.background = element_rect(fill = "grey90"),
+                plot.background = element_rect(fill = "white")
             )
     } else {
         theme_minimal() +
             theme(
                 axis.text.y = element_text(angle = 0, hjust = 1),
                 panel.grid = element_blank(),
-                panel.grid.major.x = element_line(colour = "grey90"),
+                panel.grid.major.x = element_line(colour = "grey90", linetype = "dotted"),
                 strip.text = element_text(size = 10, face = "bold"),
-                strip.background = element_rect(fill = "grey90")
+                strip.background = element_rect(fill = "grey90"),
+                plot.background = element_rect(fill = "white")
             )
     }
 }
